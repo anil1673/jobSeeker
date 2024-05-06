@@ -1,0 +1,12 @@
+.adminJobs{
+    background-color: var(--bg1);
+    min-height: 100vh;
+
+}
+.adminJobsList{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:50px;
+    
+}
+

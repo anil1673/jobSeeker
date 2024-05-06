@@ -1,0 +1,45 @@
+.job {
+    background-color: var(--cardColor);
+    transition: 0.5s ease;
+    padding: 10px;
+    position: relative;
+}
+
+.job:hover {
+    transform: scale(0.98);
+    border-radius: 20px;
+}
+.job .title{
+    color: var(--t1);
+}
+.job .desc{
+    margin: 15px 0;
+    color: var(--t3);
+    font-size: 14px;
+}
+.job .extraInfo .extraInfoLeft div{
+    display: flex;
+    margin: 10px 0;
+    gap: 10px;
+    color: var(--t3);
+    font-size: 14px;
+}
+/* .job .extraInfo .extraInfoLeft div  */
+.applyBtn{
+    cursor: pointer;
+    background-color: var(--bg2);
+    padding: 10px 20px;
+    position: absolute;
+    right: 20px;
+    border: 0;
+    border-radius: 6px;
+    bottom: 20px;
+    background-color: var(--bg1);
+    color: var(--t1);
+}
+@media (max-width:500px) {
+
+    .applyBtn{
+        padding: 10px 15px;
+    }
+}
