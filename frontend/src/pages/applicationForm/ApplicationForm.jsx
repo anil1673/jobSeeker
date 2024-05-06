@@ -13,7 +13,7 @@ const ApplicationForm = () => {
         email:"",
         coverLetter:"",
         phone:"",
-        address:""
+        address:"",
         },
         validationSchema:applicatioFormSchema,
         onSubmit:async(values,errors)=>{
