@@ -25,11 +25,20 @@ export const jobValidationSchema=Yup.object({
 
 })
 
+
+const supportedFormats = ['image/png', 'image/jpeg', 'image/webp'];
 export const applicatioFormSchema=Yup.object({
     name:Yup.string().required("name is required"),
     address:Yup.string().required("address is required"),
     phone:Yup.string().required("phone is required"),
-    coverletter:Yup.string().required("name is required"),
+    cv:Yup.mixed().required('CV is required').test('fileFormat', 'Unsupported file format', value => {
+      if (!value) return true; // No file uploaded is valid
+      return supportedFormats.includes(value.type);
+    })
+    .test('fileSize', 'File size too large', value => {
+      if (!value) return true; // No file uploaded is valid
+      return value.size <= 10485760; // 10MB in bytes
+    }),
     
 
 })

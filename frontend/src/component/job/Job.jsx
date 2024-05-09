@@ -1,8 +1,11 @@
 import React from 'react'
 import "./Job.css"
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const Job = ({data}) => {
+    const navigate=useNavigate();
+    
     
     return (
         <>
@@ -15,7 +18,7 @@ const Job = ({data}) => {
                         <div className="location"><h4>Location: </h4><p>{data.location}</p> </div>
                         <div className="salary"><h4>Salary:</h4><p>{data.salary}</p></div>
                     </div>
-                    <button className='applyBtn'>Apply Now</button>
+                    <button className='applyBtn' onClick={()=>{navigate("/applicationform")}}>Apply Now</button>
                     
                 </div>
             </div>

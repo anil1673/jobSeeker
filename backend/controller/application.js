@@ -31,7 +31,7 @@ export const postApplication=async(req,res,next)=>{
             })
          }
 
-         const {name,email,coverLetter,phone,address,jobId}=req.body;
+         const {name,email,cv,phone,address,jobId}=req.body;
 
          const applicantId = {
             user: req.user._id,
@@ -44,15 +44,15 @@ export const postApplication=async(req,res,next)=>{
             role: "Employer",
           };
 
-          if(!name || !email || !coverLetter || !phone || !address || !applicantId || !employerId || !resume){
-           return  res.status(400).json({
-                error:400,
-                msg:"please fill all field"
-            })
-          }
+        //   if(!name || !email || !cv || !phone || !address || !applicantId || !employerId || !resume){
+        //    return  res.status(400).json({
+        //         error:400,
+        //         msg:"please fill all field"
+        //     })
+        //   }
 
           const application = await Application.create({
-            name,email,coverLetter,phone,address,applicantId,employerId,resume: {
+            name,email,cv,phone,address,applicantId,employerId,resume: {
               public_id: cloudinaryResponse.public_id,
               url: cloudinaryResponse.secure_url,
             },
